@@ -1,0 +1,7 @@
+CREATE DATABASE spring_cloud;
+
+CREATE TABLE IF NOT EXISTS `payment`(
+    `id` bigint(20) UNSIGNED AUTO_INCREMENT,
+    `serial` VARCHAR(200) DEFAULT "" COMMENT "支付流水号",
+    PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
