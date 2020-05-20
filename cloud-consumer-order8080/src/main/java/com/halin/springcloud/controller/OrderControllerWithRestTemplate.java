@@ -13,7 +13,11 @@ import javax.annotation.Resource;
 @RequestMapping("/consumer")
 public class OrderControllerWithRestTemplate {
 
-    public static final String PAYMENT_URL = "http://localhost:8002/provider";
+    // 访问单机版服务
+    // public static final String PAYMENT_URL = "http://localhost:8002/provider";
+
+    // 访问集群版服务
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE/provider";
 
     @Resource
     private RestTemplate restTemplate;

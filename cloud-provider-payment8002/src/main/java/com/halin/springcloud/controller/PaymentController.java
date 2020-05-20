@@ -12,7 +12,6 @@ import javax.annotation.Resource;
 
 @RestController
 @Slf4j
-@Log4j
 @RequestMapping("/provider")
 public class PaymentController {
 
@@ -38,9 +37,9 @@ public class PaymentController {
         Payment payment = this.paymentService.getPaymentById(id);
         if(payment != null){
             log.info(String.format(" **** get result : %s **** ", payment.toString()));
-            return new CommonResult(200, "success: port: " + this.serverPort, payment);
+            return new CommonResult(200, "success: port: " + this.serverPort , payment);
         }else{
-            return new CommonResult(444, "fail: port: " + this.serverPort);
+            return new CommonResult(444, "fail: port: " +  this.serverPort);
         }
     }
 

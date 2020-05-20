@@ -16,6 +16,10 @@ mybatis:
   type-aliases-package: com.halin.springcloud.entities
 
 eureka:
+  instance:
+    # eureka dashboard中代替显示ip
+    instance-id: payment8001
+    prefer-ip-address: true # 访问路径可以显示ip
   client:
     # 表示要将自己注册到eureka中
     register-with-eureka: true
@@ -23,4 +27,5 @@ eureka:
     # 单节点无所谓，集群必须设置为true才能配合
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:7001/eureka
+    # 配置集群需要同时添加多个eureka节点
+      defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka

@@ -25,4 +25,5 @@ eureka:
     # 单节点无所谓，集群必须设置为true才能配合
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      # 配置集群需要同时添加多个eureka节点
+      defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka
