@@ -5,23 +5,21 @@ import com.halin.springcloud.entities.Payment;
 import com.halin.springcloud.service.PaymentService;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
 @RestController
 @Slf4j
 @Log4j
+@RequestMapping("/provider")
 public class PaymentController {
 
     @Resource
     private PaymentService paymentService;
 
     @PostMapping(value = "/payment/create")
-    public CommonResult create(Payment payment){
+    public CommonResult create(@RequestBody Payment payment){
         int result = this.paymentService.create(payment);
         log.info(String.format(" **** create result : %s **** ", result));
         if(result > 0){
