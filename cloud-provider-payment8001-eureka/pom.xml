@@ -9,14 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-provider-payment8002</artifactId>
+    <artifactId>cloud-provider-payment8001-eureka</artifactId>
 
     <dependencies>
-        <!--        &lt;!&ndash; 包含了sleuth zipkin 数据链路追踪&ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.cloud</groupId>-->
-        <!--            <artifactId>spring-cloud-starter-zipkin</artifactId>-->
-        <!--        </dependency>-->
+<!--        &lt;!&ndash; 包含了sleuth zipkin 数据链路追踪&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-zipkin</artifactId>-->
+<!--        </dependency>-->
 
         <!-- 项目公共jar包，已由maven安装到本地仓库-->
         <dependency>
