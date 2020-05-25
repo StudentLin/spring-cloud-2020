@@ -1,14 +1,14 @@
-package com.hain.springcloud;
+package com.halin.springcloud;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-// 该注解用于想consul或者zookeeper作为注册中心时注册服务
 @EnableDiscoveryClient
-public class PaymentMain8004 {
+public class PaymentMainConsul8006 {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentMain8004.class, args);
+        SpringApplication.run(PaymentMainConsul8006.class, args);
     }
 }
