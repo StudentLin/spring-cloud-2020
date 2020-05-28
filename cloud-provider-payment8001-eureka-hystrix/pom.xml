@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-consumer-order8080</artifactId>
+    <artifactId>cloud-provider-payment8001-eureka-hystrix</artifactId>
 
     <dependencies>
         <!-- 项目公共jar包，已由maven安装到本地仓库-->
@@ -54,6 +54,13 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <!-- hystrix -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>2.2.2.RELEASE</version>
         </dependency>
 
     </dependencies>

@@ -1,17 +1,15 @@
 package com.halin.springcloud;
 
-import com.halin.myrule.MyRibbonRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableEurekaClient
-// 启动自定义ribbon轮询算法
-@RibbonClient(name = "cloud-payment-service", configuration = MyRibbonRule.class)
-public class OrderMain8080 {
+@EnableFeignClients
+public class OrderFeignMain8080 {
     public static void main(String[] args) {
-        SpringApplication.run(OrderMain8080.class, args);
+        SpringApplication.run(OrderFeignMain8080.class, args);
     }
 }

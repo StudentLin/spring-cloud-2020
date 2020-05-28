@@ -1,8 +1,12 @@
 package com.halin.springcloud.controller;
 
+import com.halin.springcloud.entities.CommonResult;
 import com.halin.springcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.bouncycastle.crypto.agreement.kdf.ConcatenationKDFGenerator;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -24,8 +28,8 @@ public class OrderControllerWithRestTemplate {
     private RestTemplate restTemplate;
 
     @GetMapping("/payment/create")
-    public String create(Payment payment){
-        return restTemplate.postForObject(PAYMENT_URL + "/payment/consul", payment, String.class);
+    public CommonResult<Payment> create(Payment payment){
+        return restTemplate.postForObject(PAYMENT_URL + "payment/consul", payment, CommonResult.class);
     }
 
 }

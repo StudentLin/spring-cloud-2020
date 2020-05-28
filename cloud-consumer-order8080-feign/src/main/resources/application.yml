@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: consumer-payment-feigin
+
+eureka:
+  client:
+    # 表示要将自己注册到eureka中
+    register-with-eureka: true
+    # 是否从eureka中住区已经有的注册信息，默认为true；
+    # 单节点无所谓，集群必须设置为true才能配合
+    fetch-registry: true
+    service-url:
+      # 配置集群需要同时添加多个eureka节点
+      defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka
+
+# 客户端设置feign的超时时间 （由于OpenFeign默认支持Ribbon，所以该配置由ribbon承担）
+ribbon:
+  # 指的是微服务调用建立连接的所用时间，适用于网络状况正常的情况下两端连接所用的时间
+  ReadTimeout: 50000
+  # 指的是建立连接到从服务器取到可用资源的时间（接受服务提供者返回数据的时间）
+  ConnectTimeout: 50000
+
+
+logging:
+  level:
+    # 配置feign日志监控各个接口的级别
+    package com.halin.springcloud.service.PaymentFeignService: debug

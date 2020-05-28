@@ -13,7 +13,7 @@ public class PaymentConsulController {
     private String serverPort;
 
     @RequestMapping("/payment/consul")
-    public String paymentZk() {
+    public String paymentConsul() {
         return "spring cloud with zookeeper: " + serverPort + "\r\n " + UUID.randomUUID().toString();
     }
 }

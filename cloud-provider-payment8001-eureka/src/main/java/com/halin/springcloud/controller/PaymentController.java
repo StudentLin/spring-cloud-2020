@@ -3,6 +3,7 @@ package com.halin.springcloud.controller;
 import com.halin.springcloud.entities.CommonResult;
 import com.halin.springcloud.entities.Payment;
 import com.halin.springcloud.service.PaymentService;
+import jdk.internal.jline.internal.Log;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,12 +12,11 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.print.attribute.HashAttributeSet;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
-@Log4j
 @RequestMapping("/provider")
 public class PaymentController {
 
@@ -65,6 +65,21 @@ public class PaymentController {
         return new CommonResult(200, "success: port: " + this.serverPort, serviceMap);
     }
 
+    @GetMapping("/payment/lb")
+    public String getPaymentLB(){
+        return this.serverPort;
+    }
 
+    //给feign做超时调用测试
+    @GetMapping("/payment/feign/timeout")
+    public String paymentFeignTimeout(){
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }finally {
+            return serverPort;
+        }
+    }
 
 }
