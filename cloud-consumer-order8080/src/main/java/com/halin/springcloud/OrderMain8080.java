@@ -9,7 +9,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 @SpringBootApplication
 @EnableEurekaClient
 // 启动自定义ribbon轮询算法
-@RibbonClient(name = "cloud-payment-service", configuration = MyRibbonRule.class)
+@RibbonClient(name = "CLOUD-PAYMENT-SERVICE", configuration = MyRibbonRule.class)
 public class OrderMain8080 {
     public static void main(String[] args) {
         SpringApplication.run(OrderMain8080.class, args);

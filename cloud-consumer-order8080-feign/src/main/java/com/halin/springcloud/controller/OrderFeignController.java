@@ -25,7 +25,7 @@ public class OrderFeignController {
         return paymentFeignService.getPaymentById(id);
     }
 
-    //给feign做超时调用测试
+    //给hystrix做超时调用测试
     @GetMapping("/payment/feign/timeout")
     public String paymentFeignTimeout(){
       //openfeign-ribbon，客户端一般默认调用超时是1秒钟

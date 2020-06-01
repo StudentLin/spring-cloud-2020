@@ -26,7 +26,7 @@ public interface PaymentFeignService {
     @GetMapping(value = "/provider/payment/get/{id}")
     CommonResult<Payment> getPaymentById(@PathVariable("id") Long id);
 
-    //给feign做超时调用测试
+    //测试feign超时
     @GetMapping("/provider/payment/feign/timeout")
     String paymentFeignTimeout();
 
