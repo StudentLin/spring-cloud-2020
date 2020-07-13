@@ -15,15 +15,26 @@
     <module>cloud-eureka-server7001</module>
     <module>cloud-eureka-server7002</module>
     <module>cloud-provider-payment8004-zk</module>
-      <module>cloud-consumer-order8080-zk</module>
-      <module>cloud-provider-payment8006-consul</module>
-      <module>cloud-consumer-order8080-consul</module>
-      <module>cloud-consumer-order8080-feign</module>
-      <module>cloud-provider-payment8001-eureka-hystrix</module>
-      <module>cloud-consumer-order8080-feign-hystrix</module>
-      <module>cloud-cosumer-hystrix-dashboard9001</module>
+    <module>cloud-consumer-order8080-zk</module>
+    <module>cloud-provider-payment8006-consul</module>
+    <module>cloud-consumer-order8080-consul</module>
+    <module>cloud-consumer-order8080-feign</module>
+    <module>cloud-provider-payment8001-eureka-hystrix</module>
+    <module>cloud-consumer-order8080-feign-hystrix</module>
     <module>cloud-consumer-order9001-hystrix-dashboard</module>
-      <module>cloud-gateway-gateway9527</module>
+    <module>cloud-consumer-order9001-hystrix-dashboard</module>
+    <module>cloud-gateway-gateway9527</module>
+    <module>cloud-config-center3344</module>
+    <module>cloud-config-client3355</module>
+    <module>cloud-config-client3366-bus-rabbitmq</module>
+    <module>cloud-stream-rabbitmq-provider8801</module>
+    <module>cloud-stream-rabbitmq-consumer8802</module>
+    <module>cloud-stream-rabbitmq-consumer8803</module>
+    <module>cloud-alibaba-provider-payment9001</module>
+    <module>cloud-alibaba-provider-payment9002</module>
+    <module>cloud-alibaba-consumer-nacos-order8083</module>
+    <module>cloud-alibaba-config-nacos-client3377</module>
+      <module>cloud-alibaba-sentinel-service8041</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -69,7 +80,7 @@
       <dependency>
         <groupId>com.alibaba.cloud</groupId>
         <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-        <version>2.1.0.RELEASE</version>
+        <version>2.2.0.RELEASE</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
